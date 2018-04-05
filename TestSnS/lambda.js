@@ -29,5 +29,5 @@ exports.handler = function (event, context, callback) {
 			callback(err);
 		});
 
-	callback(null, data);
+	callback(null, "Success");
 }
