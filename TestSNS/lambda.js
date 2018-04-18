@@ -17,6 +17,28 @@ exports.handler = function (event, context, callback) {
 			// error handling goes here
 			console.log("Error caused");
 		});
+	sns.publish({
+		Message: 'Test Direct SMS resource type',
+		MessageAttributes: {
+			'AWS.SNS.SMS.SMSType': {
+				DataType: 'String',
+				StringValue: 'Promotional'
+			},
+			'AWS.SNS.SMS.SenderID': {
+				DataType: 'String',
+				StringValue: 'Andun'
+			},
+		},
+		PhoneNumber: '+940770630943'
+	}).promise()
+		.then(data => {
+			// your code goes here
+			console.log("SMS Sent Successfully");
+		})
+		.catch(err => {
+			// error handling goes here
+			console.log("Send failed");
+		});
 
 	callback(null, 'Successfully executed');
 }
