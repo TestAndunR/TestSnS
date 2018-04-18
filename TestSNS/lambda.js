@@ -7,11 +7,11 @@ exports.handler = function (event, context, callback) {
 		Subject: 'TestSNS',
 		MessageAttributes: {},
 		MessageStructure: 'String',
-		TopicArn: 'arn:aws:sns:us-east-1:318300609668:TestSNSTrigger'
+		TopicArn: 'arn:aws:sns:us-east-1:318300609668:SMS_SNS'
 	}).promise()
 		.then(data => {
 			// your code goes here
-			console.log("Success");
+			console.log("Success SNS");
 		})
 		.catch(err => {
 			// error handling goes here
